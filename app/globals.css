@@ -277,7 +277,7 @@ a {
 .hero-kicker {
   position: absolute;
   z-index: 2;
-  top: 43%;
+  bottom: clamp(150px, 23vw, 340px);
   left: clamp(24px, 4vw, 64px);
   margin: 0;
   color: rgba(15, 15, 12, 0.62);
@@ -290,7 +290,7 @@ a {
   position: absolute;
   z-index: 3;
   right: 8vw;
-  bottom: 28%;
+  bottom: clamp(100px, 13vw, 190px);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -1603,7 +1603,7 @@ a {
     font-size: clamp(92px, 26vw, 210px);
     line-height: 0.76;
   }
-  .hero-kicker { top: 24%; }
+  .hero-kicker { bottom: clamp(150px, 23vw, 240px); }
   .arrow-note { display: none; }
 
   .manifesto-grid,
@@ -1661,7 +1661,7 @@ a {
     letter-spacing: -0.075em;
   }
 
-  .hero-kicker { top: 29%; font-size: 16px; }
+  .hero-kicker { bottom: 140px; font-size: 16px; }
   .manifesto { padding-top: 120px; padding-bottom: 120px; }
   .manifesto h2,
   .section-heading h2,

@@ -21,7 +21,7 @@ export default function Home() {
           who can solve almost any problem with wisdom.
         </p>
         <InteractiveName />
-        <ArrowNote>point anywhere, then scroll to split the story</ArrowNote>
+        <ArrowNote>full-time learner, part-time side-quester</ArrowNote>
       </section>
 
       <Reveal>
