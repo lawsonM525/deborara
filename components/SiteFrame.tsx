@@ -8,6 +8,7 @@ const navItems = [
   { href: "/work", label: "Experience" },
   { href: "/now", label: "Now" },
   { href: "/working-with-me", label: "Work with me" },
+  { href: "/game", label: "Play" },
 ];
 
 export const contactHref =

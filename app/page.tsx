@@ -96,6 +96,9 @@ export default function Home() {
             <Link className="button button-light" href="/working-with-me">
               How I work with people
             </Link>
+            <Link className="button button-light" href="/game">
+              Play the Debora game
+            </Link>
           </div>
         </section>
       </Reveal>
