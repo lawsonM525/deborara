@@ -16,9 +16,9 @@ export default function Home() {
         <div className="hero-glow hero-glow-one" />
         <div className="hero-glow hero-glow-two" />
         <p className="hero-kicker">
-          Meet the human behind the résumé—
+          Hello, meet the excellent consultant
           <br />
-          curious, direct &amp; always in motion.
+          who can solve almost any problem with wisdom.
         </p>
         <InteractiveName />
         <ArrowNote>point anywhere, then scroll to split the story</ArrowNote>
