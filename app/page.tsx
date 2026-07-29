@@ -71,6 +71,10 @@ export default function Home() {
           <span className="eyebrow">Choose your Debora</span>
           <h2>FOUR MODES.<br />SAME HUMAN.</h2>
           <p className="hand-note">tap a card—no wrong character</p>
+          <div className="bitmoji-sticker">
+            <img src="/images/debora-bitmoji.jpeg" alt="Debora's Bitmoji with hands together" />
+            <span>ready for the next side quest</span>
+          </div>
         </div>
         <div className="talent-grid">
           {[

@@ -3,9 +3,27 @@
 import { useEffect, useState } from "react";
 
 const frames = [
-  { label: "professional mode", mark: "D.", className: "portrait-blue" },
-  { label: "off-duty mode", mark: "DEB", className: "portrait-purple" },
-  { label: "thinking mode", mark: "?", className: "portrait-green" },
+  {
+    label: "on the move",
+    src: "/images/debora-portrait.jpeg",
+    alt: "Debora taking a mirror portrait in an elevator",
+    className: "portrait-yellow",
+    position: "50% 42%",
+  },
+  {
+    label: "at the Ambassador's residence",
+    src: "/images/debora-embassy.jpeg",
+    alt: "Debora standing between American flags at the U.S. Ambassador's residence",
+    className: "portrait-blue",
+    position: "50% 43%",
+  },
+  {
+    label: "community mode",
+    src: "/images/debora-friends-lunch.jpeg",
+    alt: "Debora sharing a meal with friends",
+    className: "portrait-green",
+    position: "72% 50%",
+  },
 ];
 
 export function PortraitStack() {
@@ -20,7 +38,7 @@ export function PortraitStack() {
   }, []);
 
   return (
-    <div className="portrait-stack" aria-label="Animated portrait placeholder">
+    <div className="portrait-stack" aria-label="Animated portraits of Debora">
       {frames.map((frame, index) => (
         <div
           key={frame.label}
@@ -29,12 +47,16 @@ export function PortraitStack() {
           }`}
           aria-hidden={active !== index}
         >
-          <span className="portrait-mark">{frame.mark}</span>
+          <img
+            src={frame.src}
+            alt={active === index ? frame.alt : ""}
+            style={{ objectPosition: frame.position }}
+          />
           <span className="portrait-label">{frame.label}</span>
         </div>
       ))}
       <span className="portrait-caption">
-        drop Debora&apos;s favorite photos here
+        one person, several excellent side quests
       </span>
     </div>
   );

@@ -350,7 +350,7 @@ a {
   position: absolute;
   inset: 0;
   display: grid;
-  padding: 36px;
+  padding: 0;
   border: 7px solid var(--paper);
   border-radius: 34px;
   box-shadow: -8px 15px 30px rgba(0, 0, 0, 0.14);
@@ -358,27 +358,6 @@ a {
   place-items: center;
   transform: rotate(-7deg) translateY(20px) scale(0.96);
   transition: opacity 450ms ease, transform 600ms cubic-bezier(.2,.8,.2,1);
-}
-
-.portrait-card::before,
-.portrait-card::after {
-  position: absolute;
-  border: 2px solid rgba(0, 0, 0, 0.62);
-  border-radius: 50%;
-  content: "";
-}
-
-.portrait-card::before {
-  width: 56%;
-  height: 56%;
-}
-
-.portrait-card::after {
-  bottom: 18%;
-  width: 75%;
-  height: 28%;
-  border-bottom: 0;
-  border-radius: 50% 50% 0 0;
 }
 
 .portrait-card.is-active {
@@ -390,21 +369,25 @@ a {
 .portrait-blue { background: var(--blue); }
 .portrait-purple { background: var(--purple); }
 .portrait-green { background: var(--green); }
+.portrait-yellow { background: var(--yellow); }
 
-.portrait-mark {
-  z-index: 1;
-  color: rgba(0, 0, 0, 0.82);
-  font-family: "Reddit Sans Condensed", sans-serif;
-  font-size: clamp(90px, 14vw, 190px);
-  font-weight: 900;
+.portrait-card > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 27px;
+  object-fit: cover;
 }
 
 .portrait-label {
   position: absolute;
   right: 28px;
   bottom: 24px;
-  color: rgba(0, 0, 0, 0.65);
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 254, 251, 0.84);
+  color: #161612;
   font-weight: 600;
+  backdrop-filter: blur(8px);
 }
 
 .portrait-caption {
@@ -446,6 +429,36 @@ a {
   color: var(--muted);
   font-size: 24px;
   transform: rotate(-4deg);
+}
+
+.bitmoji-sticker {
+  position: absolute;
+  right: 1%;
+  bottom: -34px;
+  z-index: 2;
+  display: flex;
+  width: 160px;
+  padding: 10px;
+  border: 5px solid var(--paper);
+  border-radius: 22px;
+  flex-direction: column;
+  gap: 8px;
+  background: white;
+  box-shadow: -4px 8px 18px rgba(0, 0, 0, 0.14);
+  color: #161612;
+  transform: rotate(4deg);
+}
+
+.bitmoji-sticker img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.bitmoji-sticker span {
+  font-family: "Caveat", cursive;
+  font-size: 17px;
+  line-height: 1;
+  text-align: center;
 }
 
 .talent-grid {
@@ -751,9 +764,12 @@ a {
   position: relative;
   z-index: 1;
   font-family: "Reddit Sans Condensed", sans-serif;
-  font-size: clamp(130px, 19vw, 260px);
+  font-size: clamp(80px, 12vw, 180px);
   font-weight: 900;
   line-height: 0.75;
+  color: white;
+  mix-blend-mode: difference;
+  opacity: 0.88;
 }
 
 .work-art span {
@@ -763,6 +779,26 @@ a {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(255, 254, 251, 0.84);
+  color: #161612;
+  backdrop-filter: blur(8px);
+}
+
+.work-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-art::before,
+.work-art::after {
+  z-index: 1;
+  border-color: rgba(255, 255, 255, 0.68);
+  mix-blend-mode: overlay;
 }
 
 .work-copy {
@@ -1321,6 +1357,13 @@ a {
   .talent-grid { grid-template-columns: 1fr; }
   .talent-card { min-height: 340px; }
   .section-heading .hand-note { position: static; margin: -30px 0 50px; }
+  .bitmoji-sticker {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 132px;
+    margin: -30px 0 30px auto;
+  }
 
   .contact-split { min-height: 760px; }
   .contact-words {
