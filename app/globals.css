@@ -213,20 +213,69 @@ a {
   pointer-events: none;
 }
 
-.hero h1 {
+.interactive-name {
+  --progress: 0;
+  --separate: 0px;
+  --split: 50%;
+  --tilt: 0deg;
   position: relative;
   z-index: 2;
-  display: flex;
   width: 100%;
-  margin: 0;
-  justify-content: space-between;
+  height: 0.76em;
   color: #0c0c0a;
+  cursor: col-resize;
   font-family: "Reddit Sans Condensed", sans-serif;
   font-size: clamp(116px, 20vw, 360px);
   font-weight: 900;
   letter-spacing: -0.075em;
-  line-height: 0.72;
+  line-height: 0.76;
   text-transform: uppercase;
+  touch-action: pan-y;
+}
+
+.name-half {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  will-change: clip-path, transform;
+}
+
+.name-left {
+  clip-path: polygon(0 0, var(--split) 0, var(--split) 100%, 0 100%);
+  transform: translateX(calc(-1 * var(--separate))) rotate(calc(-1 * var(--tilt)));
+  transform-origin: 25% 70%;
+}
+
+.name-right {
+  clip-path: polygon(var(--split) 0, 100% 0, 100% 100%, var(--split) 100%);
+  transform: translateX(var(--separate)) rotate(var(--tilt));
+  transform-origin: 75% 70%;
+}
+
+.name-cut {
+  position: absolute;
+  top: 4%;
+  bottom: 2%;
+  left: var(--split);
+  width: 2px;
+  background: rgba(17, 17, 15, 0.35);
+  opacity: var(--progress);
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.name-cut i {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #11110f;
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.7);
+  transform: translateX(-50%);
 }
 
 .hero-kicker {
@@ -1273,13 +1322,11 @@ a {
   .floating-nav nav a { display: none; }
   .floating-nav nav a.active { display: block; }
 
-  .hero h1 {
-    flex-direction: column;
-    font-size: clamp(120px, 35vw, 250px);
-    line-height: 0.68;
+  .interactive-name {
+    height: 0.76em;
+    font-size: clamp(92px, 26vw, 210px);
+    line-height: 0.76;
   }
-
-  .hero h1 span:last-child { align-self: flex-end; }
   .hero-kicker { top: 24%; }
   .arrow-note { display: none; }
 
@@ -1333,8 +1380,8 @@ a {
     padding: 100px 16px 28px;
   }
 
-  .hero h1 {
-    font-size: clamp(105px, 37vw, 170px);
+  .interactive-name {
+    font-size: clamp(88px, 26vw, 138px);
     letter-spacing: -0.075em;
   }
 

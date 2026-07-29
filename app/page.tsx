@@ -7,6 +7,7 @@ import {
 } from "../components/SiteFrame";
 import { PortraitStack } from "../components/PortraitStack";
 import { Reveal } from "../components/Reveal";
+import { InteractiveName } from "../components/InteractiveName";
 
 export default function Home() {
   return (
@@ -19,11 +20,8 @@ export default function Home() {
           <br />
           curious, direct &amp; always in motion.
         </p>
-        <h1 aria-label="Debora">
-          <span>DEBO</span>
-          <span>RA</span>
-        </h1>
-        <ArrowNote>start with the person, not the job title</ArrowNote>
+        <InteractiveName />
+        <ArrowNote>point anywhere, then scroll to split the story</ArrowNote>
       </section>
 
       <Reveal>
