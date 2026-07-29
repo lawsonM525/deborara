@@ -99,6 +99,7 @@ export default function GamePage() {
         eyebrow="Four questions. Zero pressure."
         title="HOW WELL DO YOU KNOW DEBORA?"
         note="insert coin—knowledge of Debora required"
+        compact
       />
       <section className="game-shell">
         <span className="pixel-spark spark-one" aria-hidden="true" />
