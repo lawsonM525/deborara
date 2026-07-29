@@ -121,14 +121,14 @@ export function PageIntro({
   note,
   compact = false,
 }: {
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   note?: string;
   compact?: boolean;
 }) {
   return (
     <section className={`page-intro ${compact ? "compact-intro" : ""}`}>
-      <span className="eyebrow">{eyebrow}</span>
+      {eyebrow && <span className="eyebrow">{eyebrow}</span>}
       <h1>{title}</h1>
       {note && <p className="hand-note">{note}</p>}
     </section>

@@ -112,9 +112,7 @@ export default function GamePage() {
   return (
     <SiteFrame current="/game">
       <PageIntro
-        eyebrow="Four questions. Zero pressure."
         title="HOW WELL DO YOU KNOW DEBORA?"
-        note="a quick tour through the person behind the résumé"
         compact
       />
       <section className="game-shell">
