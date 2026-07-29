@@ -75,14 +75,17 @@ export default function Home() {
         </div>
         <div className="talent-grid">
           {[
-            ["01", "Fast learner", "I get up to speed quickly, especially when the subject or setting is new.", "blue", "/images/debora-avatar-learner.png"],
-            ["02", "Structured thinker", "I turn broad questions into priorities, decisions, and clear next steps.", "green", "/images/debora-avatar-thinker.png"],
-            ["03", "Clear communicator", "I make ideas understandable—in a presentation, a team, or a difficult conversation.", "yellow", "/images/debora-avatar-communicator.png"],
-            ["04", "Reliable teammate", "I value ownership, direct feedback, and doing what I said I would do.", "purple", "/images/debora-avatar-teammate.png"],
+            ["01", "Fast learner", "I get up to speed quickly, especially when the subject or setting is new.", "blue", "/images/debora-avatar-learner-cutout.png"],
+            ["02", "Structured thinker", "I turn broad questions into priorities, decisions, and clear next steps.", "green", "/images/debora-avatar-thinker-cutout.png"],
+            ["03", "Clear communicator", "I make ideas understandable—in a presentation, a team, or a difficult conversation.", "yellow", "/images/debora-avatar-communicator-cutout.png"],
+            ["04", "Reliable teammate", "I value ownership, direct feedback, and doing what I said I would do.", "purple", "/images/debora-avatar-teammate-cutout.png"],
           ].map(([number, title, copy, color, image]) => (
             <article className={`talent-card ${color}`} key={title}>
               <span className="card-number">{number}</span>
-              <img src={image} alt="" aria-hidden="true" />
+              <div className="avatar-stage">
+                <img src={image} alt="" aria-hidden="true" />
+                <span className="avatar-color-bar" aria-hidden="true" />
+              </div>
               <div className="talent-copy">
                 <h3>{title}</h3>
                 <p>{copy}</p>

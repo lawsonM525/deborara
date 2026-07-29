@@ -595,30 +595,34 @@ a {
 
 .talent-grid {
   display: grid;
+  padding-top: 26px;
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
 }
 
 .talent-card {
+  --talent-color: var(--yellow-accent);
   position: relative;
   display: flex;
   min-height: 500px;
   padding: 0;
+  border: 1px solid var(--line);
   border-radius: 24px;
   flex-direction: column;
-  color: #161612;
-  overflow: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  overflow: visible;
   transition: transform 260ms cubic-bezier(.2,.8,.2,1), box-shadow 260ms ease;
 }
 
 .talent-card:hover {
   z-index: 2;
-  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.16);
-  transform: translateY(-12px) rotate(-1deg);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.12);
+  transform: translateY(-6px) rotate(-0.5deg);
 }
 
 .talent-card:nth-child(even):hover {
-  transform: translateY(-12px) rotate(1deg);
+  transform: translateY(-6px) rotate(0.5deg);
 }
 
 .blue { background: var(--blue); }
@@ -626,10 +630,10 @@ a {
 .yellow { background: var(--yellow); }
 .purple { background: var(--purple); }
 
-.talent-card.blue { background: #c2eaf3; }
-.talent-card.green { background: #cff3c2; }
-.talent-card.yellow { background: #fdf3da; }
-.talent-card.purple { background: #e9dafd; }
+.talent-card.blue { --talent-color: #4ccfed; background: var(--paper); }
+.talent-card.green { --talent-color: #67dd3c; background: var(--paper); }
+.talent-card.yellow { --talent-color: #e1b035; background: var(--paper); }
+.talent-card.purple { --talent-color: #964ff4; background: var(--paper); }
 
 .card-number {
   position: absolute;
@@ -638,16 +642,61 @@ a {
   left: 16px;
   padding: 7px 9px;
   border-radius: 999px;
-  background: rgba(255, 254, 251, 0.78);
+  background: var(--paper);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
   font-size: 13px;
   font-weight: 600;
   backdrop-filter: blur(8px);
 }
 
-.talent-card > img {
+.avatar-stage {
+  position: relative;
+  display: grid;
+  min-height: 300px;
+  border-radius: 24px 24px 0 0;
+  place-items: end center;
+  transition: transform 280ms cubic-bezier(.2,.8,.2,1);
+}
+
+.talent-card:hover .avatar-stage {
+  transform: translateY(-8px);
+}
+
+.avatar-stage > img {
+  position: relative;
+  z-index: 1;
   width: 100%;
   aspect-ratio: 1;
-  object-fit: cover;
+  margin-top: -26px;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 16px 16px rgba(0, 0, 0, 0.12));
+  animation: avatar-bob 4.2s ease-in-out infinite;
+}
+
+.talent-card:nth-child(2) .avatar-stage > img { animation-delay: -1.2s; }
+.talent-card:nth-child(3) .avatar-stage > img { animation-delay: -2.4s; }
+.talent-card:nth-child(4) .avatar-stage > img { animation-delay: -3.2s; }
+
+.avatar-color-bar {
+  position: absolute;
+  right: 11%;
+  bottom: 8px;
+  left: 11%;
+  height: 18px;
+  border-radius: 999px;
+  background: var(--talent-color);
+  box-shadow: 0 7px 0 color-mix(in srgb, var(--talent-color) 35%, transparent);
+  transform: rotate(-1.5deg);
+}
+
+.talent-card:nth-child(even) .avatar-color-bar {
+  transform: rotate(1.5deg);
+}
+
+@keyframes avatar-bob {
+  0%, 100% { transform: translateY(0) rotate(-0.35deg); }
+  50% { transform: translateY(-8px) rotate(0.35deg); }
 }
 
 .talent-copy {
@@ -670,7 +719,7 @@ a {
 
 .talent-card p {
   margin: 22px 0 0;
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--muted);
   line-height: 1.45;
 }
 
