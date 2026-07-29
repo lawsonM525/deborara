@@ -147,6 +147,21 @@ a {
   font-size: 18px;
 }
 
+.theme-toggle img {
+  width: 27px;
+  height: 27px;
+  object-fit: contain;
+  transition: transform 220ms ease;
+}
+
+.theme-toggle:hover img {
+  transform: rotate(-9deg) scale(1.12);
+}
+
+:root[data-theme="dark"] .theme-toggle img {
+  filter: invert(1);
+}
+
 .section-pad {
   width: min(1440px, 100%);
   margin: 0 auto;

@@ -48,7 +48,11 @@ export function SiteFrame({
           onClick={toggleTheme}
           aria-label={`Switch to ${dark ? "light" : "dark"} mode`}
         >
-          <span aria-hidden="true">{dark ? "☀" : "☾"}</span>
+          <img
+            src={dark ? "/images/doodles/sun-white.png" : "/images/doodles/moon-white.png"}
+            alt=""
+            aria-hidden="true"
+          />
         </button>
         <nav>
           {navItems.map((item) => (
