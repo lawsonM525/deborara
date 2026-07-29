@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { contactHref, Scribble, SiteFrame } from "../components/SiteFrame";
+import { contactHref, SiteFrame } from "../components/SiteFrame";
 import { PortraitStack } from "../components/PortraitStack";
 import { Reveal } from "../components/Reveal";
 import { InteractiveName } from "../components/InteractiveName";
+import { TypedWord } from "../components/TypedWord";
 
 export default function Home() {
   return (
@@ -22,10 +23,17 @@ export default function Home() {
         <section className="manifesto section-pad">
           <span className="eyebrow">Hello, I&apos;m Debora</span>
           <h2>
-            I LIKE PROBLEMS THAT NEED BOTH <Scribble>ANALYSIS</Scribble>
+            I LIKE WORK THAT NEEDS
             <br />
-            AND <Scribble>PEOPLE.</Scribble>
+            <TypedWord delay={150}>ANALYSIS.</TypedWord>
+            <br />
+            AND <TypedWord delay={950}>PEOPLE.</TypedWord>
           </h2>
+          <p className="journey-doodle" aria-label="Born in India, shaped by Ghana and Côte d'Ivoire, now based in Belgium">
+            India <span>→</span> Ghana <span>→</span> Côte d&apos;Ivoire <span>→</span> Belgium
+          </p>
+          <span className="manifesto-star star-a" aria-hidden="true">✦</span>
+          <span className="manifesto-star star-b" aria-hidden="true">✦</span>
           <div className="manifesto-grid">
             <p>
               I&apos;m studying Business Engineering at KU Leuven and looking
@@ -67,16 +75,18 @@ export default function Home() {
         </div>
         <div className="talent-grid">
           {[
-            ["01", "Fast learner", "I get up to speed quickly, especially when the subject or setting is new.", "blue", "◉"],
-            ["02", "Structured thinker", "I turn broad questions into priorities, decisions, and clear next steps.", "green", "↗"],
-            ["03", "Clear communicator", "I make ideas understandable—in a presentation, a team, or a difficult conversation.", "yellow", "✦"],
-            ["04", "Reliable teammate", "I value ownership, direct feedback, and doing what I said I would do.", "purple", "→"],
-          ].map(([number, title, copy, color, symbol]) => (
+            ["01", "Fast learner", "I get up to speed quickly, especially when the subject or setting is new.", "blue", "/images/debora-avatar-learner.png"],
+            ["02", "Structured thinker", "I turn broad questions into priorities, decisions, and clear next steps.", "green", "/images/debora-avatar-thinker.png"],
+            ["03", "Clear communicator", "I make ideas understandable—in a presentation, a team, or a difficult conversation.", "yellow", "/images/debora-avatar-communicator.png"],
+            ["04", "Reliable teammate", "I value ownership, direct feedback, and doing what I said I would do.", "purple", "/images/debora-avatar-teammate.png"],
+          ].map(([number, title, copy, color, image]) => (
             <article className={`talent-card ${color}`} key={title}>
               <span className="card-number">{number}</span>
-              <span className="talent-symbol" aria-hidden="true">{symbol}</span>
-              <h3>{title}</h3>
-              <p>{copy}</p>
+              <img src={image} alt="" aria-hidden="true" />
+              <div className="talent-copy">
+                <h3>{title}</h3>
+                <p>{copy}</p>
+              </div>
             </article>
           ))}
         </div>

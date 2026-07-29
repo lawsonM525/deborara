@@ -74,7 +74,7 @@ export function SiteFrame({
       <footer className="site-footer">
         <div className="footer-intro">
           <span className="eyebrow">Debora Ruban Arumairaj</span>
-          <h2>Curious by nature.<br />Useful by choice.</h2>
+          <h2>Curious by nature.<br />Excellence by choice.</h2>
           <p>
             Business Engineering student at KU Leuven, based in Belgium. I
             bring structure to ambiguous problems and momentum to the teams
