@@ -1,9 +1,12 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+
+const letters = [..."DEBORA"];
 
 export function InteractiveName() {
   const nameRef = useRef<HTMLDivElement>(null);
+  const [splitIndex, setSplitIndex] = useState(3);
 
   useEffect(() => {
     const node = nameRef.current;
@@ -21,7 +24,6 @@ export function InteractiveName() {
         const distance = Math.min(window.innerWidth * 0.105, 150) * progress;
         node.style.setProperty("--progress", progress.toFixed(3));
         node.style.setProperty("--separate", `${distance}px`);
-        node.style.setProperty("--tilt", `${progress * 2.2}deg`);
       });
     };
 
@@ -39,8 +41,20 @@ export function InteractiveName() {
     const node = nameRef.current;
     if (!node) return;
     const bounds = node.getBoundingClientRect();
-    const percentage = ((clientX - bounds.left) / bounds.width) * 100;
-    node.style.setProperty("--split", `${Math.min(92, Math.max(8, percentage))}%`);
+    const localX = clientX - bounds.left;
+    const letterNodes = Array.from(
+      node.querySelectorAll<HTMLElement>(".name-letter"),
+    );
+    const gaps = letterNodes.slice(0, -1).map((letter, index) => {
+      const next = letterNodes[index + 1];
+      return (letter.offsetLeft + letter.offsetWidth + next.offsetLeft) / 2;
+    });
+    const closestGap = gaps.reduce(
+      (best, gap, index) =>
+        Math.abs(gap - localX) < Math.abs(gaps[best] - localX) ? index : best,
+      0,
+    );
+    setSplitIndex(closestGap + 1);
   }
 
   return (
@@ -51,10 +65,17 @@ export function InteractiveName() {
       aria-label="Debora"
       onPointerMove={(event) => moveSplit(event.clientX)}
     >
-      <span className="name-half name-left" aria-hidden="true">DEBORA</span>
-      <span className="name-half name-right" aria-hidden="true">DEBORA</span>
-      <span className="name-cut" aria-hidden="true">
-        <i />
+      <span className="name-letter-row" aria-hidden="true">
+        {letters.map((letter, index) => (
+          <span
+            className={`name-letter ${
+              index < splitIndex ? "letter-left" : "letter-right"
+            }`}
+            key={`${letter}-${index}`}
+          >
+            {letter}
+          </span>
+        ))}
       </span>
     </div>
   );

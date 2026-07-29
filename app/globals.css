@@ -216,66 +216,47 @@ a {
 .interactive-name {
   --progress: 0;
   --separate: 0px;
-  --split: 50%;
-  --tilt: 0deg;
   position: relative;
   z-index: 2;
+  display: flex;
   width: 100%;
   height: 0.76em;
+  align-items: flex-end;
+  justify-content: center;
   color: #0c0c0a;
   cursor: col-resize;
   font-family: "Reddit Sans Condensed", sans-serif;
-  font-size: clamp(116px, 20vw, 360px);
+  font-size: clamp(116px, 27vw, 400px);
   font-weight: 900;
-  letter-spacing: -0.075em;
   line-height: 0.76;
   text-transform: uppercase;
   touch-action: pan-y;
 }
 
-.name-half {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
+.name-letter-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   white-space: nowrap;
-  will-change: clip-path, transform;
 }
 
-.name-left {
-  clip-path: polygon(0 0, var(--split) 0, var(--split) 100%, 0 100%);
-  transform: translateX(calc(-1 * var(--separate))) rotate(calc(-1 * var(--tilt)));
-  transform-origin: 25% 70%;
+.name-letter {
+  display: block;
+  margin-right: -0.075em;
+  will-change: transform;
+  transition: transform 160ms cubic-bezier(.22, .61, .36, 1);
 }
 
-.name-right {
-  clip-path: polygon(var(--split) 0, 100% 0, 100% 100%, var(--split) 100%);
-  transform: translateX(var(--separate)) rotate(var(--tilt));
-  transform-origin: 75% 70%;
+.name-letter:last-child {
+  margin-right: 0;
 }
 
-.name-cut {
-  position: absolute;
-  top: 4%;
-  bottom: 2%;
-  left: var(--split);
-  width: 2px;
-  background: rgba(17, 17, 15, 0.35);
-  opacity: var(--progress);
-  pointer-events: none;
-  transform: translateX(-50%);
+.letter-left {
+  transform: translate3d(calc(-1 * var(--separate)), 0, 0);
 }
 
-.name-cut i {
-  position: absolute;
-  top: -24px;
-  left: 50%;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #11110f;
-  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.7);
-  transform: translateX(-50%);
+.letter-right {
+  transform: translate3d(var(--separate), 0, 0);
 }
 
 .hero-kicker {
