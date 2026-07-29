@@ -3,9 +3,9 @@ import { Reveal } from "../../components/Reveal";
 
 const stories = [
   {
-    quote: "Deborah makes complicated things feel possible—and makes the people around her feel capable.",
+    quote: "Michelle’s testimonial for Debora will live here.",
     name: "Michelle",
-    relation: "Collaborator & friend",
+    relation: "Testimonial placeholder",
     color: "yellow",
   },
   {

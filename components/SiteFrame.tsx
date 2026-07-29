@@ -12,7 +12,7 @@ const navItems = [
 ];
 
 export const contactHref =
-  "mailto:hello@deborah.work?subject=Hello%20Deborah%20%E2%80%94%20let%27s%20work%20together&body=Hi%20Deborah%2C%0A%0AI%20found%20your%20website%20and%20wanted%20to%20reach%20out%20about...%0A%0ABest%2C";
+  "mailto:hello@debora.work?subject=Hello%20Debora%20%E2%80%94%20let%27s%20work%20together&body=Hi%20Debora%2C%0A%0AI%20found%20your%20website%20and%20wanted%20to%20reach%20out%20about...%0A%0ABest%2C";
 
 export function SiteFrame({
   children,
@@ -24,7 +24,7 @@ export function SiteFrame({
   const [dark, setDark] = useState(false);
 
   useEffect(() => {
-    const saved = window.localStorage.getItem("deborah-theme");
+    const saved = window.localStorage.getItem("debora-theme");
     const wantsDark =
       saved === "dark" ||
       (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches);
@@ -36,7 +36,7 @@ export function SiteFrame({
     const next = !dark;
     setDark(next);
     document.documentElement.dataset.theme = next ? "dark" : "light";
-    window.localStorage.setItem("deborah-theme", next ? "dark" : "light");
+    window.localStorage.setItem("debora-theme", next ? "dark" : "light");
   }
 
   return (

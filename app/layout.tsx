@@ -2,32 +2,32 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://deborah-documentary.sites.openai.com"),
+  metadataBase: new URL("https://deborah-documentary.michellescomputer.chatgpt.site"),
   title: {
-    default: "Deborah — Life, Work & Everything In Between",
-    template: "%s — Deborah",
+    default: "Debora — Life, Work & Everything In Between",
+    template: "%s — Debora",
   },
   description:
-    "An interactive documentary of Deborah's work, story, ideas, and way of working.",
+    "An interactive documentary of Debora Ruban Arumairaj's work, story, ideas, and way of working.",
   openGraph: {
-    title: "Deborah — Life, Work & Everything In Between",
+    title: "Debora — Life, Work & Everything In Between",
     description:
-      "Meet Deborah beyond the résumé: curious, direct, collaborative, and always learning.",
+      "Meet Debora beyond the résumé: a full-time learner, part-time side-quester, and Business Engineering student.",
     type: "website",
     images: [
       {
         url: "/og.png",
         width: 1729,
         height: 910,
-        alt: "Deborah — Life, Work & Everything In Between",
+        alt: "Debora — Life, Work & Everything In Between",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Deborah — Life, Work & Everything In Between",
+    title: "Debora — Life, Work & Everything In Between",
     description:
-      "Meet Deborah beyond the résumé: curious, direct, collaborative, and always learning.",
+      "Meet Debora beyond the résumé: a full-time learner, part-time side-quester, and Business Engineering student.",
     images: ["/og.png"],
   },
 };

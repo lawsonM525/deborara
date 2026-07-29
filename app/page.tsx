@@ -19,9 +19,9 @@ export default function Home() {
           <br />
           curious, direct &amp; always in motion.
         </p>
-        <h1 aria-label="Deborah">
+        <h1 aria-label="Debora">
           <span>DEBO</span>
-          <span>RAH</span>
+          <span>RA</span>
         </h1>
         <ArrowNote>start with the person, not the job title</ArrowNote>
       </section>
@@ -36,13 +36,14 @@ export default function Home() {
           </h2>
           <div className="manifesto-grid">
             <p>
-              I&apos;m Deborah: a learner, problem solver, communicator, and
-              momentum maker. I care about good work, honest feedback, and the
-              people building alongside me.
+              I&apos;m Debora Ruban Arumairaj: a full-time learner, part-time
+              side-quester, and Business Engineering student at KU Leuven.
             </p>
             <p>
-              This site collects the professional, personal, unfinished, and
-              occasionally unexpected parts of my story in one place.
+              Born in India, shaped by Ghana and Côte d&apos;Ivoire, and now
+              living in Belgium, I&apos;ve learned to adapt quickly, connect
+              across cultures, and communicate even when language tries to be a
+              barrier.
             </p>
           </div>
         </section>
@@ -51,11 +52,12 @@ export default function Home() {
       <section className="portrait-story section-pad">
         <PortraitStack />
         <Reveal className="portrait-copy">
-          <span className="eyebrow">Currently becoming</span>
+          <span className="eyebrow">Full-time learner</span>
           <h2>ONE PERSON.<br />A LOT OF TABS OPEN.</h2>
           <p>
-            I&apos;m most alive where ideas, people, and execution meet. Give
-            me a new subject, a real problem, and a deadline—I&apos;ll start
+            I&apos;m known for academic drive, public speaking, optimistic
+            problem-solving, and a tendency to turn every opportunity into a
+            side quest. Give me a real problem and a deadline—I&apos;ll start
             connecting the dots.
           </p>
           <Link className="text-link" href="/now">
@@ -66,7 +68,7 @@ export default function Home() {
 
       <section className="talents section-pad">
         <div className="section-heading">
-          <span className="eyebrow">Choose your Deborah</span>
+          <span className="eyebrow">Choose your Debora</span>
           <h2>FOUR MODES.<br />SAME HUMAN.</h2>
           <p className="hand-note">tap a card—no wrong character</p>
         </div>
@@ -100,7 +102,7 @@ export default function Home() {
               Explore my work
             </Link>
             <Link className="button button-light" href="/game">
-              Play the Deborah game
+              Play the Debora game
             </Link>
           </div>
         </section>
@@ -108,7 +110,7 @@ export default function Home() {
 
       <section className="contact-split">
         <p className="hand-note">have a project, question, or good plot twist?</p>
-        <a href={contactHref} className="contact-words" aria-label="Email Deborah">
+        <a href={contactHref} className="contact-words" aria-label="Email Debora">
           <span>GET</span>
           <span>IN</span>
           <span>TOUCH</span>

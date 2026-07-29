@@ -13,32 +13,32 @@ export default function NowPage() {
           <span className="eyebrow">Main quest</span>
           <h2>Building the next chapter with intention.</h2>
           <p>
-            Replace this with Deborah&apos;s current role, project, search, or
-            learning season. Keep it specific enough to be useful and human
-            enough to feel alive.
+            I&apos;m pursuing a Bachelor of Business Engineering at KU Leuven
+            while collecting the lessons from my recent U.S. Embassy internship
+            and deciding which ambitious side quest deserves my energy next.
           </p>
         </article>
         <article className="now-card">
           <span className="eyebrow">Learning</span>
-          <h3>The topic currently taking over my notes app</h3>
-          <p>A course, question, skill, or delightfully niche rabbit hole.</p>
+          <h3>Winning business games without wasting the clock</h3>
+          <p>Turning case-competition lessons into practical shortcuts for standing out.</p>
         </article>
         <article className="now-card">
           <span className="eyebrow">Reading</span>
-          <h3>One book worth interrupting people about</h3>
-          <p>Add a title and one line about what it is changing.</p>
+          <h3>Leadership, business strategy & the power of one action</h3>
+          <p>The ideas shaping how I learn, lead, and show up for a team.</p>
         </article>
         <article className="now-card">
           <span className="eyebrow">Outside work</span>
-          <h3>Finding energy away from the screen</h3>
-          <p>A ritual, city, sport, friendship, or current small obsession.</p>
+          <h3>Community, travel & good book recommendations</h3>
+          <p>Plus baking and athletics that are, by all accounts, still works in progress.</p>
         </article>
         <article className="now-card now-open">
           <span className="eyebrow">Open to</span>
           <h3>Conversations with thoughtful people building useful things.</h3>
         </article>
       </section>
-      <p className="last-updated">Last updated: add date here • Porto / Amsterdam / wherever Deborah is now</p>
+      <p className="last-updated">Based in Belgium • shaped by India, Ghana & Côte d&apos;Ivoire</p>
     </SiteFrame>
   );
 }

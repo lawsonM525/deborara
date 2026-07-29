@@ -5,13 +5,13 @@ import { PageIntro, SiteFrame } from "../../components/SiteFrame";
 
 const questions = [
   {
-    prompt: "A project is stuck. Deborah's first move is…",
+    prompt: "A project is stuck. Debora's first move is…",
     answers: ["Make a prettier deck", "Ask what problem we are actually solving", "Schedule six meetings"],
     correct: 1,
     reveal: "Clarity before activity. Every time.",
   },
   {
-    prompt: "The best way to give Deborah feedback?",
+    prompt: "The best way to give Debora feedback?",
     answers: ["Use the sandwich method", "Hint at it for three weeks", "Say it clearly and specifically"],
     correct: 2,
     reveal: "Direct is kind. Specific is even kinder.",
@@ -103,7 +103,7 @@ export default function GamePage() {
                score >= 2 ? "You two should probably talk." :
                "Excellent excuse for a coffee."}
             </h2>
-            <p>The real Deborah is less multiple-choice. Luckily, she replies to email.</p>
+            <p>The real Debora is less multiple-choice. Luckily, she replies to email.</p>
             <button type="button" className="button button-light" onClick={restart}>Play again</button>
           </div>
         )}

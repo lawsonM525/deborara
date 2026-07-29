@@ -34,7 +34,7 @@ export function PortraitStack() {
         </div>
       ))}
       <span className="portrait-caption">
-        drop Deborah&apos;s favorite photos here
+        drop Debora&apos;s favorite photos here
       </span>
     </div>
   );
