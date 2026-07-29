@@ -1,12 +1,12 @@
-import { PageIntro, SiteFrame } from "../../components/SiteFrame";
+import { contactHref, PageIntro, SiteFrame } from "../../components/SiteFrame";
 
 export default function NowPage() {
   return (
-    <SiteFrame current="/work">
+    <SiteFrame current="/now">
       <PageIntro
-        eyebrow="Updated monthly-ish"
+        eyebrow="Right now"
         title="WHAT I'M DOING NOW"
-        note="a snapshot, not a status report"
+        note="where my attention is going at the moment"
       />
       <section className="now-board section-pad">
         <article className="now-card now-main">
@@ -14,8 +14,9 @@ export default function NowPage() {
           <h2>Building the next chapter with intention.</h2>
           <p>
             I&apos;m pursuing a Bachelor of Business Engineering at KU Leuven
-            while collecting the lessons from my recent U.S. Embassy internship
-            and deciding which ambitious side quest deserves my energy next.
+            while building on what I learned during my U.S. Embassy internship
+            and business competitions. I&apos;m especially interested in roles
+            that combine analysis, communication, and real responsibility.
           </p>
         </article>
         <article className="now-card">
@@ -35,7 +36,10 @@ export default function NowPage() {
         </article>
         <article className="now-card now-open">
           <span className="eyebrow">Open to</span>
-          <h3>Conversations with thoughtful people building useful things.</h3>
+          <div>
+            <h3>Conversations with thoughtful people building useful things.</h3>
+            <a className="text-link" href={contactHref}>Start a conversation →</a>
+          </div>
         </article>
       </section>
       <p className="last-updated">Based in Belgium • shaped by India, Ghana & Côte d&apos;Ivoire</p>

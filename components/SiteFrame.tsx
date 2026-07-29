@@ -5,10 +5,9 @@ import { useEffect, useState } from "react";
 
 const navItems = [
   { href: "/", label: "About" },
-  { href: "/work", label: "Work" },
-  { href: "/testimonials", label: "Stories" },
-  { href: "/articles", label: "Articles" },
-  { href: "/game", label: "Play" },
+  { href: "/work", label: "Experience" },
+  { href: "/now", label: "Now" },
+  { href: "/working-with-me", label: "Work with me" },
 ];
 
 export const contactHref =
@@ -28,8 +27,9 @@ export function SiteFrame({
     const wantsDark =
       saved === "dark" ||
       (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches);
-    setDark(wantsDark);
     document.documentElement.dataset.theme = wantsDark ? "dark" : "light";
+    const frame = window.requestAnimationFrame(() => setDark(wantsDark));
+    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   function toggleTheme() {
@@ -71,19 +71,31 @@ export function SiteFrame({
       </header>
       <main>{children}</main>
       <footer className="site-footer">
-        <div>
-          <span className="eyebrow">Keep wandering</span>
-          <p>Built as a living documentary, not a finished biography.</p>
-        </div>
-        <div className="footer-links">
-          <a href={contactHref}>Email</a>
-          <a href="https://www.linkedin.com/" rel="noreferrer">
-            LinkedIn
+        <div className="footer-intro">
+          <span className="eyebrow">Debora Ruban Arumairaj</span>
+          <h2>Curious by nature.<br />Useful by choice.</h2>
+          <p>
+            Business Engineering student at KU Leuven, based in Belgium. I
+            bring structure to ambiguous problems and momentum to the teams
+            solving them.
+          </p>
+          <a className="button button-dark" href={contactHref}>
+            Email Debora
           </a>
-          <a href="https://www.instagram.com/" rel="noreferrer">
-            Instagram
-          </a>
         </div>
+        <div className="footer-nav">
+          <span className="eyebrow">Explore</span>
+          {navItems.map((item) => (
+            <Link href={item.href} key={item.href}>{item.label}</Link>
+          ))}
+        </div>
+        <div className="footer-details">
+          <span className="eyebrow">A quick introduction</span>
+          <p>Born in India.</p>
+          <p>Raised across Ghana and Côte d&apos;Ivoire.</p>
+          <p>Now studying and building in Belgium.</p>
+        </div>
+        <p className="footer-note">Made to start a conversation—not to replace one.</p>
       </footer>
     </>
   );

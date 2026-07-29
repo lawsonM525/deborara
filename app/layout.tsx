@@ -4,30 +4,30 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://deborah-documentary.michellescomputer.chatgpt.site"),
   title: {
-    default: "Debora — Life, Work & Everything In Between",
+    default: "Debora Ruban Arumairaj — Business Engineering Student",
     template: "%s — Debora",
   },
   description:
-    "An interactive documentary of Debora Ruban Arumairaj's work, story, ideas, and way of working.",
+    "Meet Debora Ruban Arumairaj, a Business Engineering student at KU Leuven with experience in operations, finance, strategy, and cross-cultural teamwork.",
   openGraph: {
-    title: "Debora — Life, Work & Everything In Between",
+    title: "Debora Ruban Arumairaj — Curious thinker, practical problem solver",
     description:
-      "Meet Debora beyond the résumé: a full-time learner, part-time side-quester, and Business Engineering student.",
+      "Business Engineering student at KU Leuven with experience in operations, finance, strategy, and cross-cultural teamwork.",
     type: "website",
     images: [
       {
         url: "/og.png",
-        width: 1729,
-        height: 910,
-        alt: "Debora — Life, Work & Everything In Between",
+        width: 1200,
+        height: 630,
+        alt: "Meet Debora Ruban Arumairaj",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Debora — Life, Work & Everything In Between",
+    title: "Debora Ruban Arumairaj — Curious thinker, practical problem solver",
     description:
-      "Meet Debora beyond the résumé: a full-time learner, part-time side-quester, and Business Engineering student.",
+      "Business Engineering student at KU Leuven with experience in operations, finance, strategy, and cross-cultural teamwork.",
     images: ["/og.png"],
   },
 };

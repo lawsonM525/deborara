@@ -1,5 +1,4 @@
-import { FeedbackForm } from "../../components/FeedbackForm";
-import { PageIntro, SiteFrame } from "../../components/SiteFrame";
+import { contactHref, PageIntro, SiteFrame } from "../../components/SiteFrame";
 
 const principles = [
   ["01", "Say it straight", "Skip the feedback sandwich. Be kind, specific, and direct—I would rather know now than decode hints later."],
@@ -10,22 +9,22 @@ const principles = [
 
 export default function WorkingWithMePage() {
   return (
-    <SiteFrame current="">
+    <SiteFrame current="/working-with-me">
       <PageIntro
-        eyebrow="You found the hidden page"
+        eyebrow="Working together"
         title="WORKING WITH ME"
-        note="the manual I wish every new team came with"
+        note="a useful head start for future teammates"
       />
       <section className="wwm-intro section-pad">
         <p className="lead-copy">
           I&apos;m autonomous, deadline-specific, and happiest when communication
-          is clear. This page is not a list of demands; it&apos;s a shortcut to
-          helping us do better work together.
+          is clear. I care about understanding the purpose of the work, owning
+          my part, and making it easy for other people to contribute theirs.
         </p>
         <div className="personality-stamp">
-          <span>Personality snapshot</span>
-          <strong>ADD MBTI</strong>
-          <p>Useful context, never a complete definition.</p>
+          <span>In a team</span>
+          <strong>DIRECT + CURIOUS</strong>
+          <p>Warm communication, clear expectations, no mind-reading required.</p>
         </div>
       </section>
       <section className="principle-list section-pad">
@@ -37,8 +36,10 @@ export default function WorkingWithMePage() {
           </article>
         ))}
       </section>
-      <section className="feedback-section section-pad">
-        <FeedbackForm />
+      <section className="next-page-card section-pad">
+        <p className="hand-note">The best working relationships start with a conversation.</p>
+        <h2>THINK WE&apos;D WORK WELL TOGETHER?</h2>
+        <a className="button button-dark" href={contactHref}>Email Debora</a>
       </section>
     </SiteFrame>
   );
