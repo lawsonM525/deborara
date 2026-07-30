@@ -194,10 +194,6 @@ a {
 
 .floating-nav nav a {
   --nav-preview-color: var(--yellow-accent);
-  transition:
-    background-color 180ms ease,
-    color 180ms ease,
-    transform 180ms ease;
 }
 
 .floating-nav nav a.nav-preview-yellow { --nav-preview-color: #e1ad28; }
@@ -206,12 +202,8 @@ a {
 .floating-nav nav a.nav-preview-blue { --nav-preview-color: #35bddd; }
 .floating-nav nav a.nav-preview-orange { --nav-preview-color: #f06b3f; }
 
-.floating-nav nav a:hover,
 .floating-nav nav a:focus-visible {
-  background: color-mix(in srgb, var(--nav-preview-color) 78%, white);
-  color: #11110f;
   outline: none;
-  transform: translateY(-1px);
 }
 
 .floating-nav nav a::after {
@@ -228,6 +220,7 @@ a {
 }
 
 .floating-nav nav a:hover::after,
+.floating-nav nav a:focus-visible::after,
 .floating-nav nav a.active::after {
   transform: scaleX(1);
 }
