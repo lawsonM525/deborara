@@ -1,7 +1,24 @@
-import { env } from "cloudflare:workers";
+interface D1StatementLike {
+  bind: (...values: unknown[]) => D1StatementLike;
+  run: () => Promise<unknown>;
+}
 
-interface FeedbackEnv {
-  DB: D1Database;
+interface D1DatabaseLike {
+  prepare: (query: string) => D1StatementLike;
+}
+
+async function getFeedbackDatabase(): Promise<D1DatabaseLike | null> {
+  if (process.env.VERCEL) return null;
+
+  try {
+    const runtimeModule = "cloudflare:workers";
+    const { env } = (await import(runtimeModule)) as {
+      env?: { DB?: D1DatabaseLike };
+    };
+    return env?.DB ?? null;
+  } catch {
+    return null;
+  }
 }
 
 const createTable = `
@@ -32,13 +49,13 @@ export async function POST(request: Request) {
       return Response.json({ error: "Feedback must be between 6 and 3000 characters." }, { status: 400 });
     }
 
-    const feedbackEnv = env as unknown as FeedbackEnv;
-    if (!feedbackEnv.DB) {
+    const database = await getFeedbackDatabase();
+    if (!database) {
       return Response.json({ error: "Feedback storage is unavailable." }, { status: 503 });
     }
 
-    await feedbackEnv.DB.prepare(createTable).run();
-    await feedbackEnv.DB.prepare(
+    await database.prepare(createTable).run();
+    await database.prepare(
       "INSERT INTO feedback (name, context, message, anonymous) VALUES (?, ?, ?, ?)",
     )
       .bind(
