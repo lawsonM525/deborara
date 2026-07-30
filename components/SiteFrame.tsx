@@ -11,6 +11,14 @@ const navItems = [
   { href: "/game", label: "Play" },
 ];
 
+const pageThemes: Record<string, string> = {
+  "/": "yellow",
+  "/work": "purple",
+  "/now": "green",
+  "/working-with-me": "blue",
+  "/game": "orange",
+};
+
 export const contactHref =
   "mailto:hello@debora.work?subject=Hello%20Debora%20%E2%80%94%20let%27s%20work%20together&body=Hi%20Debora%2C%0A%0AI%20found%20your%20website%20and%20wanted%20to%20reach%20out%20about...%0A%0ABest%2C";
 
@@ -40,8 +48,10 @@ export function SiteFrame({
     window.localStorage.setItem("debora-theme", next ? "dark" : "light");
   }
 
+  const pageTheme = pageThemes[current] ?? "yellow";
+
   return (
-    <>
+    <div className={`site-shell page-theme-${pageTheme}`}>
       <header className="floating-nav" aria-label="Primary navigation">
         <button
           className="theme-toggle"
@@ -98,7 +108,7 @@ export function SiteFrame({
         </div>
         <p className="footer-note">Made to start a conversation—not to replace one.</p>
       </footer>
-    </>
+    </div>
   );
 }
 

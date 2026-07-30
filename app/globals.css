@@ -49,6 +49,83 @@ body {
   transition: background-color 250ms ease, color 250ms ease;
 }
 
+.site-shell {
+  min-height: 100svh;
+  background: var(--paper);
+  color: var(--ink);
+  transition: background-color 280ms ease, color 280ms ease;
+}
+
+.page-theme-yellow {
+  --paper: #fff9e8;
+  --panel: #fff0bd;
+  --yellow: #fdf0c7;
+  --yellow-accent: #e1ad28;
+}
+
+.page-theme-purple {
+  --paper: #f6efff;
+  --panel: #eadcff;
+  --yellow: #e9dafd;
+  --yellow-accent: #9550e9;
+}
+
+.page-theme-green {
+  --paper: #effbe9;
+  --panel: #d9f5cd;
+  --yellow: #cff3c2;
+  --yellow-accent: #58c936;
+}
+
+.page-theme-blue {
+  --paper: #edfaff;
+  --panel: #d4f2f9;
+  --yellow: #c2eaf3;
+  --yellow-accent: #35bddd;
+}
+
+.page-theme-orange {
+  --paper: #fff2e7;
+  --panel: #ffdcca;
+  --yellow: #ffe0c5;
+  --yellow-accent: #f06b3f;
+}
+
+:root[data-theme="dark"] .page-theme-yellow {
+  --paper: #18150d;
+  --panel: #2c2513;
+  --yellow: #3d341f;
+  --yellow-accent: #efbd42;
+}
+
+:root[data-theme="dark"] .page-theme-purple {
+  --paper: #16101e;
+  --panel: #2b1c3c;
+  --yellow: #38234e;
+  --yellow-accent: #b77aff;
+}
+
+:root[data-theme="dark"] .page-theme-green {
+  --paper: #10190d;
+  --panel: #1d3218;
+  --yellow: #213d19;
+  --yellow-accent: #79e455;
+}
+
+:root[data-theme="dark"] .page-theme-blue {
+  --paper: #0c181c;
+  --panel: #17343b;
+  --yellow: #183f48;
+  --yellow-accent: #63d8f1;
+}
+
+:root[data-theme="dark"] .page-theme-orange {
+  --paper: #1b110d;
+  --panel: #3a2118;
+  --yellow: #4a291a;
+  --yellow-accent: #ff8a5f;
+}
+
 a {
   color: inherit;
   text-decoration: none;
