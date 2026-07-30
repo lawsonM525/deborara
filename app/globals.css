@@ -662,7 +662,16 @@ a {
   transform: translateY(-8px);
 }
 
-.avatar-stage > img {
+.avatar-figure {
+  position: relative;
+  display: grid;
+  width: 100%;
+  place-items: end center;
+  animation: avatar-bob 4.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+.avatar-figure > img {
   position: relative;
   z-index: 1;
   width: 100%;
@@ -671,12 +680,11 @@ a {
   object-fit: contain;
   object-position: center bottom;
   filter: drop-shadow(0 16px 16px rgba(0, 0, 0, 0.12));
-  animation: avatar-bob 4.2s ease-in-out infinite;
 }
 
-.talent-card:nth-child(2) .avatar-stage > img { animation-delay: -1.2s; }
-.talent-card:nth-child(3) .avatar-stage > img { animation-delay: -2.4s; }
-.talent-card:nth-child(4) .avatar-stage > img { animation-delay: -3.2s; }
+.talent-card:nth-child(2) .avatar-figure { animation-delay: -1.2s; }
+.talent-card:nth-child(3) .avatar-figure { animation-delay: -2.4s; }
+.talent-card:nth-child(4) .avatar-figure { animation-delay: -3.2s; }
 
 .avatar-color-bar {
   position: absolute;

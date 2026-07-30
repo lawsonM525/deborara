@@ -83,8 +83,10 @@ export default function Home() {
             <article className={`talent-card ${color}`} key={title}>
               <span className="card-number">{number}</span>
               <div className="avatar-stage">
-                <img src={image} alt="" aria-hidden="true" />
-                <span className="avatar-color-bar" aria-hidden="true" />
+                <div className="avatar-figure">
+                  <img src={image} alt="" aria-hidden="true" />
+                  <span className="avatar-color-bar" aria-hidden="true" />
+                </div>
               </div>
               <div className="talent-copy">
                 <h3>{title}</h3>
