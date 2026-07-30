@@ -437,7 +437,7 @@ a {
 
 @keyframes type-word {
   from { clip-path: inset(0 100% 0 0); }
-  to { clip-path: inset(0 0 0 0); }
+  to { clip-path: inset(-0.14em -0.2em -0.14em 0); }
 }
 
 @keyframes cursor-blink {
