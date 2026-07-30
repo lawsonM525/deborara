@@ -4,11 +4,11 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const navItems = [
-  { href: "/", label: "About" },
-  { href: "/work", label: "Experience" },
-  { href: "/now", label: "Now" },
-  { href: "/working-with-me", label: "Work with me" },
-  { href: "/game", label: "Play" },
+  { href: "/", label: "About", theme: "yellow" },
+  { href: "/work", label: "Experience", theme: "purple" },
+  { href: "/now", label: "Now", theme: "green" },
+  { href: "/working-with-me", label: "Work with me", theme: "blue" },
+  { href: "/game", label: "Play", theme: "orange" },
 ];
 
 const pageThemes: Record<string, string> = {
@@ -70,7 +70,9 @@ export function SiteFrame({
             <Link
               href={item.href}
               key={item.href}
-              className={current === item.href ? "active" : ""}
+              className={`nav-preview-${item.theme} ${
+                current === item.href ? "active" : ""
+              }`}
             >
               {item.label}
             </Link>
