@@ -25,8 +25,7 @@ export default function Home() {
           <h2>
             I LIKE WORK THAT NEEDS
             <br />
-            <TypedWord delay={150}>ANALYSIS.</TypedWord>
-            <br />
+            <TypedWord delay={150}>ANALYSIS</TypedWord>{" "}
             AND <TypedWord delay={950}>PEOPLE.</TypedWord>
           </h2>
           <p className="journey-doodle" aria-label="Born in India, shaped by Ghana and Côte d'Ivoire, now based in Belgium">
