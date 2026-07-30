@@ -35,7 +35,6 @@ export default function NowPage() {
           <p>Plus baking and athletics that are, by all accounts, still works in progress.</p>
         </article>
         <article className="now-card now-open">
-          <span className="eyebrow">Open to</span>
           <div>
             <h3>Conversations with thoughtful people building useful things.</h3>
             <a className="text-link" href={contactHref}>Start a conversation →</a>
